@@ -36,7 +36,7 @@ export const culinaryData = [
     bestPlace: 'Rumah Makan Cibuk',
     location: 'Bandung',
     spicyLevel: 'Medium',
-    coordinates: [-6.9175, 107.6125],
+    coordinates: [-6.9200, 107.6150],
   },
   {
     id: 3,
@@ -50,7 +50,7 @@ export const culinaryData = [
     bestPlace: 'Soto Pak Gino',
     location: 'Bandung',
     spicyLevel: 'Mild',
-    coordinates: [-6.9175, 107.6125],
+    coordinates: [-6.9225, 107.6100],
   },
   {
     id: 4,
@@ -64,7 +64,7 @@ export const culinaryData = [
     bestPlace: 'Surabi Enbai',
     location: 'Bandung',
     spicyLevel: 'None',
-    coordinates: [-6.9175, 107.6125],
+    coordinates: [-6.9150, 107.6175],
   },
   {
     id: 5,
@@ -78,7 +78,7 @@ export const culinaryData = [
     bestPlace: 'Restoran Sindang Reret',
     location: 'Bandung',
     spicyLevel: 'Spicy',
-    coordinates: [-6.9175, 107.6125],
+    coordinates: [-6.9250, 107.6125],
   },
   {
     id: 6,
@@ -92,7 +92,7 @@ export const culinaryData = [
     bestPlace: 'Lotek Kaligah Apu',
     location: 'Bandung',
     spicyLevel: 'Spicy',
-    coordinates: [-6.9175, 107.6125],
+    coordinates: [-6.9100, 107.6100],
   },
   {
     id: 7,
@@ -106,7 +106,7 @@ export const culinaryData = [
     bestPlace: 'Warung Cabe Ijo',
     location: 'Bandung',
     spicyLevel: 'Spicy',
-    coordinates: [-6.9175, 107.6125],
+    coordinates: [-6.9130, 107.6160],
   },
   {
     id: 8,
@@ -120,7 +120,7 @@ export const culinaryData = [
     bestPlace: 'Cireng Jajang',
     location: 'Bandung',
     spicyLevel: 'Mild',
-    coordinates: [-6.9175, 107.6125],
+    coordinates: [-6.9270, 107.6150],
   },
   {
     id: 9,
@@ -134,7 +134,7 @@ export const culinaryData = [
     bestPlace: 'Lumpia Mang Oded',
     location: 'Bandung',
     spicyLevel: 'None',
-    coordinates: [-6.9175, 107.6125],
+    coordinates: [-6.9210, 107.6080],
   },
   {
     id: 10,
@@ -148,7 +148,7 @@ export const culinaryData = [
     bestPlace: 'Perkedel Bu Ratno',
     location: 'Bandung',
     spicyLevel: 'None',
-    coordinates: [-6.9175, 107.6125],
+    coordinates: [-6.9180, 107.6200],
   },
 ];
 
