@@ -1,0 +1,89 @@
+<svg width="240" height="240" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Decorative Circle -->
+  <circle cx="120" cy="120" r="115" fill="#f97316" opacity="0.05"/>
+  
+  <!-- Outer Ring -->
+  <circle cx="120" cy="120" r="100" fill="none" stroke="url(#orangeGradient)" stroke-width="4" opacity="0.8"/>
+  
+  <!-- Main Circle Background -->
+  <circle cx="120" cy="120" r="90" fill="url(#orangeGradient)"/>
+  
+  <!-- Gradient Definitions -->
+  <defs>
+    <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f97316;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#fb923c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ea580c;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="whiteGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f8fafc;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Mountain Layers with Shadow -->
+  <g filter="url(#shadow)">
+    <!-- Back Mountain -->
+    <path d="M 50 140 L 75 90 L 100 110 L 125 75 L 150 105 L 175 85 L 190 140 Z" 
+          fill="url(#whiteGradient)" opacity="0.7"/>
+    
+    <!-- Middle Mountain -->
+    <path d="M 40 145 L 70 100 L 95 120 L 120 80 L 145 115 L 170 95 L 200 145 Z" 
+          fill="url(#whiteGradient)" opacity="0.85"/>
+    
+    <!-- Front Mountain -->
+    <path d="M 35 150 L 65 110 L 90 130 L 115 90 L 140 125 L 165 105 L 205 150 Z" 
+          fill="#ffffff" opacity="0.95"/>
+  </g>
+  
+  <!-- Sun with Glow -->
+  <circle cx="155" cy="70" r="20" fill="#FFD700" opacity="0.3"/>
+  <circle cx="155" cy="70" r="16" fill="#FFD700"/>
+  <circle cx="155" cy="70" r="12" fill="#FFA500"/>
+  <circle cx="155" cy="70" r="8" fill="#FF8C00"/>
+  
+  <!-- Decorative Stars -->
+  <circle cx="60" cy="60" r="2" fill="#ffffff" opacity="0.8"/>
+  <circle cx="180" cy="50" r="2" fill="#ffffff" opacity="0.8"/>
+  <circle cx="70" cy="80" r="1.5" fill="#ffffff" opacity="0.6"/>
+  
+  <!-- Wave Lines (Representing Journey/Path) -->
+  <g opacity="0.9" filter="url(#shadow)">
+    <path d="M 35 160 Q 70 155, 100 160 T 165 160 T 205 160" 
+          stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M 35 170 Q 70 165, 100 170 T 165 170 T 205 170" 
+          stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
+  </g>
+  
+  <!-- Text with Shadow -->
+  <g filter="url(#shadow)">
+    <text x="120" y="195" 
+          font-family="'Arial Black', Arial, sans-serif" 
+          font-size="24" 
+          font-weight="900" 
+          fill="#ffffff" 
+          text-anchor="middle"
+          letter-spacing="2">
+      JABAR
+    </text>
+    <text x="120" y="215" 
+          font-family="Arial, sans-serif" 
+          font-size="14" 
+          font-weight="600"
+          fill="#ffffff" 
+          text-anchor="middle" 
+          opacity="0.95"
+          letter-spacing="3">
+      JOURNEY
+    </text>
+  </g>
+  
+  <!-- Decorative Corner Elements -->
+  <circle cx="210" cy="210" r="3" fill="#ffffff" opacity="0.5"/>
+  <circle cx="30" cy="30" r="3" fill="#ffffff" opacity="0.5"/>
+</svg>

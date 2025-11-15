@@ -53,19 +53,19 @@ const Culinary = () => {
     setShowModal(true);
   };
 
-  // Color mapping untuk kategori
+  // Color mapping untuk kategori - ORANGE DOMINANT
   const categoryColors = {
-    'Street Food': '#FF6B6B',
-    'Traditional': '#4ECDC4',
+    'Street Food': '#f97316',
+    'Traditional': '#f97316',
     'Dessert': '#FFE66D',
-    'Appetizer': '#95E1D3',
-    'Healthy': '#A8D8EA',
+    'Appetizer': '#f97316',
+    'Healthy': '#10b981',
   };
 
-  return (
+    return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-accent to-orange-600 text-white py-20 mt-20">
+      {/* Header - ORANGE */}
+      <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white py-20 mt-20">
         <div className="container mx-auto px-4 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -93,7 +93,7 @@ const Culinary = () => {
           className="bg-white rounded-xl shadow-lg p-4 md:p-6 mb-8 sticky top-24 z-40"
         >
           <div className="flex flex-col md:flex-row gap-4">
-            {/* Search */}
+            {/* Search - ORANGE FOCUS */}
             <div className="flex-1 relative">
               <FaSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
               <input
@@ -101,15 +101,15 @@ const Culinary = () => {
                 placeholder="Cari kuliner atau tempat makan..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent transition-all"
+                className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
               />
             </div>
 
-            {/* Category Filter */}
+            {/* Category Filter - ORANGE FOCUS */}
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent bg-white font-medium text-gray-700"
+              className="px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 bg-white font-medium text-gray-700"
             >
               {categories.map((cat) => (
                 <option key={cat} value={cat}>
@@ -118,11 +118,11 @@ const Culinary = () => {
               ))}
             </select>
 
-            {/* Sort */}
+            {/* Sort - ORANGE FOCUS */}
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent bg-white font-medium text-gray-700"
+              className="px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 bg-white font-medium text-gray-700"
             >
               <option value="popular">Terpopuler</option>
               <option value="rating">Rating Tertinggi</option>
@@ -131,12 +131,12 @@ const Culinary = () => {
               <option value="name">Nama A-Z</option>
             </select>
 
-            {/* Filter Button */}
+            {/* Filter Button - ORANGE */}
             <button
               onClick={() => setShowFilters(!showFilters)}
               className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all ${
                 showFilters
-                  ? 'bg-accent text-white'
+                  ? 'bg-orange-500 text-white'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
@@ -167,13 +167,12 @@ const Culinary = () => {
                         step="5000"
                         value={priceRange[1]}
                         onChange={(e) => setPriceRange([0, parseInt(e.target.value)])}
-                        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-accent slider-thumb"
+                        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider-thumb"
                         style={{
-                          background: `linear-gradient(to right, #ff9500 0%, #ff9500 ${(priceRange[1]/50000)*100}%, #e5e7eb ${(priceRange[1]/50000)*100}%, #e5e7eb 100%)`
+                          background: `linear-gradient(to right, #f97316 0%, #f97316 ${(priceRange[1]/50000)*100}%, #e5e7eb ${(priceRange[1]/50000)*100}%, #e5e7eb 100%)`
                         }}
                       />
                       
-                      {/* Price markers */}
                       <div className="flex justify-between text-xs text-gray-500 mt-2">
                         <span>Rp 0</span>
                         <span>Rp 10K</span>
@@ -206,11 +205,11 @@ const Culinary = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
           <div className="flex-1">
             <p className="text-gray-600 mb-3">
-              Menampilkan <span className="font-bold text-accent">{filteredData.length}</span> dari{' '}
+              Menampilkan <span className="font-bold text-orange-500">{filteredData.length}</span> dari{' '}
               <span className="font-bold">{culinaryData.length}</span> kuliner
               {selectedCategory !== 'All' && (
                 <span>
-                  {' '}dalam kategori <span className="font-bold text-accent">{selectedCategory}</span>
+                  {' '}dalam kategori <span className="font-bold text-orange-500">{selectedCategory}</span>
                 </span>
               )}
             </p>
@@ -221,7 +220,7 @@ const Culinary = () => {
                 <div key={cat} className="flex items-center gap-2 bg-white px-3 py-2 rounded-lg shadow-sm">
                   <span
                     className="w-3 h-3 rounded-full"
-                    style={{ backgroundColor: categoryColors[cat] || '#ccc' }}
+                    style={{ backgroundColor: categoryColors[cat] || '#f97316' }}
                   ></span>
                   <span className="text-xs font-medium text-gray-700">{cat}</span>
                 </div>
@@ -234,7 +233,7 @@ const Culinary = () => {
               onClick={() => setViewMode('grid')}
               className={`p-2 rounded-lg transition-all ${
                 viewMode === 'grid'
-                  ? 'bg-accent text-white'
+                  ? 'bg-orange-500 text-white'
                   : 'text-gray-600 hover:bg-gray-100'
               }`}
               title="Grid View"
@@ -245,7 +244,7 @@ const Culinary = () => {
               onClick={() => setViewMode('list')}
               className={`p-2 rounded-lg transition-all ${
                 viewMode === 'list'
-                  ? 'bg-accent text-white'
+                  ? 'bg-orange-500 text-white'
                   : 'text-gray-600 hover:bg-gray-100'
               }`}
               title="List View"
@@ -256,7 +255,7 @@ const Culinary = () => {
               onClick={() => setViewMode('map')}
               className={`p-2 rounded-lg transition-all ${
                 viewMode === 'map'
-                  ? 'bg-accent text-white'
+                  ? 'bg-orange-500 text-white'
                   : 'text-gray-600 hover:bg-gray-100'
               }`}
               title="Map View"
@@ -306,7 +305,6 @@ const Culinary = () => {
                       {viewMode === 'grid' ? (
                         <CulinaryCard food={food} />
                       ) : (
-                        // List View Card
                         <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col md:flex-row">
                           <div className="md:w-80 h-64 md:h-auto relative overflow-hidden">
                             <img
@@ -315,7 +313,10 @@ const Culinary = () => {
                               className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                             />
                             <div className="absolute top-4 left-4">
-                              <span className="bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">
+                              <span 
+                                className="text-white px-3 py-1 rounded-full text-sm font-medium"
+                                style={{ backgroundColor: categoryColors[food.category] || '#f97316' }}
+                              >
                                 {food.category}
                               </span>
                             </div>
@@ -325,7 +326,7 @@ const Culinary = () => {
                               {food.name}
                             </h3>
                             <div className="flex items-center text-gray-600 mb-3">
-                              <FaMapMarkerAlt className="mr-2 text-accent" />
+                              <FaMapMarkerAlt className="mr-2 text-orange-500" />
                               <span>{food.bestPlace}</span>
                             </div>
                             <p className="text-gray-600 mb-4 line-clamp-2">
@@ -333,7 +334,7 @@ const Culinary = () => {
                             </p>
                             <div className="flex items-center justify-between">
                               <div>
-                                <span className="text-2xl font-bold text-accent">
+                                <span className="text-2xl font-bold text-orange-500">
                                   {formatCurrency(food.price)}
                                 </span>
                                 <span className="text-gray-500 text-sm ml-2">per porsi</span>
@@ -371,7 +372,7 @@ const Culinary = () => {
                     setSelectedCategory('All');
                     setPriceRange([0, 50000]);
                   }}
-                  className="px-6 py-3 bg-accent text-white rounded-lg hover:bg-orange-600 transition-colors font-medium"
+                  className="px-6 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors font-medium"
                 >
                   Reset Pencarian
                 </button>
@@ -397,17 +398,17 @@ const Culinary = () => {
             />
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center text-gray-600">
-                <FaMapMarkerAlt className="mr-2 text-accent" />
+                <FaMapMarkerAlt className="mr-2 text-orange-500" />
                 <span>{selectedFood.bestPlace}</span>
               </div>
-              <span className="text-2xl font-bold text-accent">
+              <span className="text-2xl font-bold text-orange-500">
                 {formatCurrency(selectedFood.price)}
               </span>
             </div>
             <p className="text-gray-700 mb-4">{selectedFood.description}</p>
             <button
               onClick={() => window.location.href = `/culinary/${selectedFood.id}`}
-              className="w-full bg-accent text-white py-3 rounded-lg font-bold hover:bg-orange-600 transition-colors"
+              className="w-full bg-orange-500 text-white py-3 rounded-lg font-bold hover:bg-orange-600 transition-colors"
             >
               Lihat Detail Lengkap
             </button>

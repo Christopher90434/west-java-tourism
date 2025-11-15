@@ -97,19 +97,19 @@ const Contact = () => {
       icon: <FaMapMarkerAlt size={30} />,
       title: 'Alamat',
       content: 'Jl. Contoh No. 123, Bandung, Jawa Barat 40123',
-      color: 'bg-blue-500',
+      color: 'bg-orange-500',
     },
     {
       icon: <FaPhone size={30} />,
       title: 'Telepon',
       content: '+62 812-3456-7890',
-      color: 'bg-green-500',
+      color: 'bg-orange-600',
     },
     {
       icon: <FaEnvelope size={30} />,
       title: 'Email',
       content: 'info@jawabaratjourney.com',
-      color: 'bg-red-500',
+      color: 'bg-orange-500',
     },
   ];
 
@@ -124,8 +124,8 @@ const Contact = () => {
     <div className="min-h-screen bg-gray-50">
       <ToastContainer position="top-right" autoClose={3000} />
 
-      {/* Header */}
-      <div className="bg-gradient-to-r from-primary to-secondary text-white py-20 mt-20">
+      {/* Header - ORANGE */}
+      <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white py-20 mt-20">
         <div className="container mx-auto px-4 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -219,7 +219,7 @@ const Contact = () => {
                   className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all ${
                     errors.name
                       ? 'border-red-500 focus:ring-red-500'
-                      : 'border-gray-200 focus:ring-primary'
+                      : 'border-gray-200 focus:ring-orange-500'
                   } ${!isLoggedIn ? 'bg-gray-100 cursor-not-allowed' : ''}`}
                   placeholder="Masukkan nama Anda"
                 />
@@ -239,7 +239,7 @@ const Contact = () => {
                   className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all ${
                     errors.email
                       ? 'border-red-500 focus:ring-red-500'
-                      : 'border-gray-200 focus:ring-primary'
+                      : 'border-gray-200 focus:ring-orange-500'
                   } ${!isLoggedIn ? 'bg-gray-100 cursor-not-allowed' : ''}`}
                   placeholder="email@example.com"
                 />
@@ -259,7 +259,7 @@ const Contact = () => {
                   className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all ${
                     errors.subject
                       ? 'border-red-500 focus:ring-red-500'
-                      : 'border-gray-200 focus:ring-primary'
+                      : 'border-gray-200 focus:ring-orange-500'
                   } ${!isLoggedIn ? 'bg-gray-100 cursor-not-allowed' : ''}`}
                   placeholder="Judul pesan"
                 />
@@ -279,7 +279,7 @@ const Contact = () => {
                   className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all resize-none ${
                     errors.message
                       ? 'border-red-500 focus:ring-red-500'
-                      : 'border-gray-200 focus:ring-primary'
+                      : 'border-gray-200 focus:ring-orange-500'
                   } ${!isLoggedIn ? 'bg-gray-100 cursor-not-allowed' : ''}`}
                   placeholder="Tulis pesan Anda di sini..."
                 />
@@ -291,7 +291,7 @@ const Contact = () => {
                 disabled={isSubmitting || !isLoggedIn}
                 className={`w-full py-4 rounded-lg font-bold text-lg flex items-center justify-center gap-2 transition-all ${
                   isLoggedIn
-                    ? 'bg-primary text-white hover:bg-secondary hover:shadow-lg ' +
+                    ? 'bg-orange-500 text-white hover:bg-orange-600 hover:shadow-lg ' +
                       (isSubmitting ? 'opacity-50 cursor-not-allowed' : '')
                     : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                 }`}
@@ -358,8 +358,8 @@ const Contact = () => {
               </p>
             </div>
 
-            {/* Business Hours */}
-            <div className="bg-primary text-white rounded-xl p-8 shadow-lg">
+            {/* Business Hours - ORANGE */}
+            <div className="bg-orange-500 text-white rounded-xl p-8 shadow-lg">
               <h3 className="text-2xl font-bold mb-4">Jam Operasional</h3>
               <div className="space-y-2">
                 <div className="flex justify-between">

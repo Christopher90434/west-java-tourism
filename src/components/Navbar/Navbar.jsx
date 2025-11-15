@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaBars, FaTimes, FaHeart, FaUser, FaMountain, FaSearch } from 'react-icons/fa';
+import { FaBars, FaTimes, FaHeart, FaUser, FaSearch } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAppContext } from '../../context/AppContext';
-import SearchBar from '../SearchBar/SearchBar'; 
+import SearchBar from '../SearchBar/SearchBar';
+import Logo from '../../assets/images/logo-jabar.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,29 +45,27 @@ const Navbar = () => {
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
-            {/* Logo */}
+            {/* Logo - ORANGE THEME */}
             <Link to="/" className="flex items-center space-x-3">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center space-x-3"
+                className="flex items-center space-x-3 group"
               >
-                <div className={`p-2 rounded-xl transition-all duration-300 ${
-                  scrolled 
-                    ? 'bg-primary shadow-lg' 
-                    : 'bg-primary shadow-md'
-                }`}>
-                  <FaMountain 
-                    size={28} 
-                    className="text-white"
+                <div className="relative">
+                  <img
+                    src={Logo}
+                    alt="Logo Jawa Barat"
+                    className="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-110"
                   />
+                  <div className="absolute inset-0 bg-orange-400 rounded-full blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-300" />
                 </div>
                 
                 <div className="flex flex-col">
-                  <span className="text-xl md:text-2xl font-heading font-bold text-primary">
+                  <span className="text-xl md:text-2xl font-heading font-bold text-gray-800 leading-tight">
                     Jawa Barat
                   </span>
-                  <span className="text-xs md:text-sm font-medium text-gray-600">
+                  <span className="text-xs md:text-sm font-semibold text-orange-500 tracking-wide">
                     Journey
                   </span>
                 </div>
@@ -81,20 +80,20 @@ const Navbar = () => {
                   to={link.path}
                   className={`font-medium transition-all duration-300 relative group text-gray-700 ${
                     location.pathname === link.path
-                      ? 'text-primary font-bold'
-                      : 'hover:text-primary'
+                      ? 'text-orange-500 font-bold'
+                      : 'hover:text-orange-500'
                   }`}
                 >
                   {link.label}
                   {location.pathname === link.path && (
                     <motion.div
                       layoutId="navbar-indicator"
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-orange-500"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
                   {location.pathname !== link.path && (
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300" />
                   )}
                 </Link>
               ))}
@@ -103,7 +102,7 @@ const Navbar = () => {
               <div className="flex items-center space-x-4 ml-4 border-l pl-4 border-gray-200">
                 <button
                   onClick={() => setShowSearch(true)}
-                  className="text-gray-700 hover:text-primary transition-colors"
+                  className="text-gray-700 hover:text-orange-500 transition-colors"
                   title="Cari destinasi"
                 >
                   <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
@@ -113,7 +112,7 @@ const Navbar = () => {
 
                 <Link
                   to="/favorites"
-                  className="relative group text-gray-700 hover:text-primary transition-colors"
+                  className="relative group text-gray-700 hover:text-orange-500 transition-colors"
                   title="Favorit saya"
                 >
                   <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
@@ -122,7 +121,7 @@ const Navbar = () => {
                       <motion.span 
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
-                        className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold"
+                        className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold"
                       >
                         {favorites.length}
                       </motion.span>
@@ -132,7 +131,7 @@ const Navbar = () => {
                 
                 <Link
                   to="/login"
-                  className="text-gray-700 hover:text-primary transition-colors"
+                  className="text-gray-700 hover:text-orange-500 transition-colors"
                   title="Login / Register"
                 >
                   <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
@@ -190,8 +189,8 @@ const Navbar = () => {
                         onClick={() => setIsOpen(false)}
                         className={`py-3 px-4 rounded-xl transition-all duration-300 block ${
                           location.pathname === link.path
-                            ? 'bg-primary text-white font-bold shadow-md'
-                            : 'text-gray-700 hover:bg-gray-100'
+                            ? 'bg-orange-500 text-white font-bold shadow-md'
+                            : 'text-gray-700 hover:bg-orange-50'
                         }`}
                       >
                         {link.label}
@@ -203,14 +202,14 @@ const Navbar = () => {
                     <Link
                       to="/favorites"
                       onClick={() => setIsOpen(false)}
-                      className="flex-1 py-3 px-4 rounded-xl text-gray-700 hover:bg-gray-100 flex items-center justify-between transition-colors"
+                      className="flex-1 py-3 px-4 rounded-xl text-gray-700 hover:bg-orange-50 flex items-center justify-between transition-colors"
                     >
                       <span className="flex items-center gap-2">
-                        <FaHeart className="text-red-500" />
+                        <FaHeart className="text-orange-500" />
                         Favorit
                       </span>
                       {favorites.length > 0 && (
-                        <span className="bg-red-500 text-white text-xs rounded-full px-2 py-1 font-bold">
+                        <span className="bg-orange-500 text-white text-xs rounded-full px-2 py-1 font-bold">
                           {favorites.length}
                         </span>
                       )}
@@ -219,7 +218,7 @@ const Navbar = () => {
                     <Link
                       to="/login"
                       onClick={() => setIsOpen(false)}
-                      className="py-3 px-4 rounded-xl text-gray-700 hover:bg-gray-100 flex items-center justify-center transition-colors"
+                      className="py-3 px-4 rounded-xl text-gray-700 hover:bg-orange-50 flex items-center justify-center transition-colors"
                     >
                       <FaUser size={20} />
                     </Link>
@@ -231,7 +230,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Search Modal - UPDATED WITH SEARCHBAR COMPONENT */}
+      {/* Search Modal */}
       <AnimatePresence>
         {showSearch && (
           <motion.div
@@ -251,7 +250,7 @@ const Navbar = () => {
               <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
                 <div className="flex items-center justify-between p-6 border-b border-gray-200">
                   <h3 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
-                    <FaSearch className="text-primary" />
+                    <FaSearch className="text-orange-500" />
                     Cari Destinasi atau Kuliner
                   </h3>
                   <button

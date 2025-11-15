@@ -23,7 +23,7 @@ const CulinaryCard = ({ food }) => {
       transition={{ duration: 0.3 }}
       className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer group relative"
     >
-      {/* Image Container - REAL IMAGES */}
+      {/* Image Container */}
       <Link 
         to={`/culinary/${food.id}`} 
         className="block relative h-56 overflow-hidden bg-gray-200"
@@ -40,9 +40,9 @@ const CulinaryCard = ({ food }) => {
         
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         
-        {/* Category Badge */}
+        {/* Category Badge - ORANGE */}
         <div className="absolute top-4 left-4">
-          <span className="bg-accent text-white px-3 py-1 rounded-full text-sm font-medium shadow-md">
+          <span className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium shadow-md">
             {food.category}
           </span>
         </div>
@@ -56,9 +56,9 @@ const CulinaryCard = ({ food }) => {
           </div>
         )}
 
-        {/* Price */}
+        {/* Price - ORANGE */}
         <div className="absolute bottom-4 right-4 bg-white px-3 py-1 rounded-full shadow-md">
-          <span className="text-accent font-bold text-sm">
+          <span className="text-orange-500 font-bold text-sm">
             Rp {food.price.toLocaleString('id-ID')}
           </span>
         </div>
@@ -92,9 +92,9 @@ const CulinaryCard = ({ food }) => {
           {food.description}
         </p>
 
-        {/* Best Place */}
+        {/* Best Place - ORANGE */}
         <div className="flex items-center text-gray-600 mb-3 bg-gray-50 px-3 py-2 rounded-lg">
-          <FaMapMarkerAlt className="mr-2 text-accent flex-shrink-0" size={12} />
+          <FaMapMarkerAlt className="mr-2 text-orange-500 flex-shrink-0" size={12} />
           <div className="flex flex-col min-w-0">
             <span className="text-xs text-gray-500">Tempat Terbaik</span>
             <span className="text-sm font-semibold text-gray-800 line-clamp-1">
@@ -115,7 +115,7 @@ const CulinaryCard = ({ food }) => {
 
           <Link
             to={`/culinary/${food.id}`}
-            className="text-accent font-semibold text-xs hover:text-orange-600 transition-colors whitespace-nowrap"
+            className="text-orange-500 font-semibold text-xs hover:text-orange-600 transition-colors whitespace-nowrap"
           >
             Lihat Detail →
           </Link>

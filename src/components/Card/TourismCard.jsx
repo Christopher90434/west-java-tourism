@@ -29,9 +29,9 @@ const TourismCard = ({ destination }) => {
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         
-        {/* Category Badge */}
+        {/* Category Badge - ORANGE */}
         <div className="absolute top-4 left-4">
-          <span className="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+          <span className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium">
             {destination.category}
           </span>
         </div>
@@ -53,9 +53,9 @@ const TourismCard = ({ destination }) => {
           )}
         </motion.button>
 
-        {/* Price Tag */}
+        {/* Price Tag - ORANGE */}
         <div className="absolute bottom-4 right-4 bg-white px-3 py-1 rounded-full">
-          <span className="text-primary font-bold">
+          <span className="text-orange-500 font-bold">
             Rp {destination.price.toLocaleString('id-ID')}
           </span>
         </div>
@@ -67,9 +67,9 @@ const TourismCard = ({ destination }) => {
           {destination.name}
         </h3>
 
-        {/* Location */}
+        {/* Location - ORANGE */}
         <div className="flex items-center text-gray-600 mb-3">
-          <FaMapMarkerAlt className="mr-2 text-primary" size={14} />
+          <FaMapMarkerAlt className="mr-2 text-orange-500" size={14} />
           <span className="text-sm">{destination.location}</span>
         </div>
 
@@ -93,7 +93,7 @@ const TourismCard = ({ destination }) => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="text-primary font-semibold text-sm hover:underline"
+            className="text-orange-500 font-semibold text-sm hover:text-orange-600 transition-colors"
             onClick={(e) => {
               e.stopPropagation();
               navigate(`/tourism/${destination.id}`);

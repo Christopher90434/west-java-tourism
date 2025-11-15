@@ -54,7 +54,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary via-blue-600 to-secondary flex items-center justify-center px-4 py-20">
+    <div className="min-h-screen bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 flex items-center justify-center px-4 py-20">
       <ToastContainer position="top-right" autoClose={3000} />
       
       <motion.div
@@ -63,7 +63,7 @@ const Login = () => {
         className="bg-white rounded-2xl shadow-2xl p-8 md:p-12 w-full max-w-md"
       >
         <div className="text-center mb-8">
-          <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
             <FaUser className="text-white" size={28} />
           </div>
           <h2 className="text-3xl font-bold text-gray-800">
@@ -88,7 +88,7 @@ const Login = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required={!isLogin}
-                  className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                  className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
                   placeholder="Masukkan nama Anda"
                 />
               </div>
@@ -107,7 +107,7 @@ const Login = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
                 placeholder="email@example.com"
               />
             </div>
@@ -125,7 +125,7 @@ const Login = () => {
                 value={formData.password}
                 onChange={handleChange}
                 required
-                className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
                 placeholder="••••••••"
               />
             </div>
@@ -133,7 +133,7 @@ const Login = () => {
 
           {isLogin && (
             <div className="flex justify-end">
-              <a href="#" className="text-sm text-primary hover:underline">
+              <a href="#" className="text-sm text-orange-500 hover:text-orange-600 hover:underline">
                 Lupa password?
               </a>
             </div>
@@ -141,7 +141,7 @@ const Login = () => {
 
           <button
             type="submit"
-            className="w-full bg-primary text-white py-3 rounded-lg font-bold text-lg hover:bg-secondary transition-colors"
+            className="w-full bg-orange-500 text-white py-3 rounded-lg font-bold text-lg hover:bg-orange-600 transition-colors shadow-lg hover:shadow-xl"
           >
             {isLogin ? 'Login' : 'Daftar'}
           </button>
@@ -152,7 +152,7 @@ const Login = () => {
             {isLogin ? 'Belum punya akun?' : 'Sudah punya akun?'}{' '}
             <button
               onClick={() => setIsLogin(!isLogin)}
-              className="text-primary font-semibold hover:underline"
+              className="text-orange-500 font-semibold hover:text-orange-600 hover:underline"
             >
               {isLogin ? 'Daftar sekarang' : 'Login'}
             </button>

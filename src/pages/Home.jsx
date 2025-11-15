@@ -28,8 +28,8 @@ const Home = () => {
       {/* Hero Section */}
       <Hero />
 
-      {/* Stats Section dengan Counter Animation */}
-      <section className="py-16 bg-gradient-to-r from-primary to-secondary text-white relative overflow-hidden">
+      {/* Stats Section dengan Counter Animation - ORANGE THEME */}
+      <section className="py-16 bg-gradient-to-r from-orange-500 to-orange-600 text-white relative overflow-hidden">
         {/* Decorative Elements */}
         <div className="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-1/3 translate-y-1/3"></div>
@@ -104,7 +104,7 @@ const Home = () => {
                 icon: <FaMapMarkedAlt size={50} />,
                 title: 'Destinasi Terlengkap',
                 description: 'Ratusan destinasi wisata dengan informasi detail, foto, dan review terpercaya',
-                color: 'from-blue-500 to-blue-600',
+                color: 'from-orange-500 to-orange-600',
               },
               {
                 icon: <FaUtensils size={50} />,
@@ -155,7 +155,7 @@ const Home = () => {
             </div>
             <Link
               to="/tourism"
-              className="mt-4 md:mt-0 inline-flex items-center gap-2 text-primary font-semibold text-lg hover:gap-4 transition-all group"
+              className="mt-4 md:mt-0 inline-flex items-center gap-2 text-orange-500 font-semibold text-lg hover:gap-4 transition-all group"
             >
               Lihat Semua 
               <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
@@ -186,7 +186,7 @@ const Home = () => {
             </div>
             <Link
               to="/culinary"
-              className="mt-4 md:mt-0 inline-flex items-center gap-2 text-accent font-semibold text-lg hover:gap-4 transition-all group"
+              className="mt-4 md:mt-0 inline-flex items-center gap-2 text-orange-500 font-semibold text-lg hover:gap-4 transition-all group"
             >
               Lihat Semua 
               <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
@@ -243,7 +243,7 @@ const Home = () => {
                 alt="Tourism"
                 className="rounded-2xl shadow-2xl"
               />
-              <div className="absolute -bottom-6 -left-6 bg-primary text-white p-6 rounded-xl shadow-xl">
+              <div className="absolute -bottom-6 -left-6 bg-orange-500 text-white p-6 rounded-xl shadow-xl">
                 <div className="text-4xl font-bold">4.8/5</div>
                 <div className="text-sm opacity-90">Rating Pengguna</div>
               </div>
@@ -252,8 +252,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary via-blue-600 to-secondary text-white relative overflow-hidden">
+      {/* CTA Section - ORANGE THEME */}
+      <section className="py-20 bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-20 h-20 bg-white rounded-full"></div>
           <div className="absolute top-40 right-20 w-32 h-32 bg-white rounded-full"></div>
@@ -272,13 +272,13 @@ const Home = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/tourism"
-              className="inline-block bg-white text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl hover:scale-105"
+              className="inline-block bg-white text-orange-500 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl hover:scale-105"
             >
               Jelajahi Destinasi
             </Link>
             <Link
               to="/about"
-              className="inline-block bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-primary transition-all"
+              className="inline-block bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-orange-500 transition-all"
             >
               Pelajari Lebih Lanjut
             </Link>

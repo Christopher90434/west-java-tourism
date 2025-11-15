@@ -39,7 +39,7 @@ html {
   background: #555;
 }
 
-/* Custom Range Slider Styles */
+/* Custom Range Slider Styles - ORANGE */
 input[type="range"].slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -54,33 +54,33 @@ input[type="range"].slider-thumb::-webkit-slider-thumb {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: #2563eb;
+  background: #f97316;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.4);
   transition: all 0.2s ease;
 }
 
 input[type="range"].slider-thumb::-webkit-slider-thumb:hover {
-  background: #1e40af;
+  background: #ea580c;
   transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.6);
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.6);
 }
 
 input[type="range"].slider-thumb::-moz-range-thumb {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: #2563eb;
+  background: #f97316;
   cursor: pointer;
   border: none;
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.4);
   transition: all 0.2s ease;
 }
 
 input[type="range"].slider-thumb::-moz-range-thumb:hover {
-  background: #1e40af;
+  background: #ea580c;
   transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.6);
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.6);
 }
 
 /* Range track styles */
@@ -92,4 +92,127 @@ input[type="range"].slider-thumb::-webkit-slider-runnable-track {
 input[type="range"].slider-thumb::-moz-range-track {
   height: 8px;
   border-radius: 4px;
+}
+
+/* ========================================
+   Custom DatePicker Styling - ORANGE
+   ======================================== */
+
+/* DatePicker wrapper full width */
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker__input-container input {
+  width: 100%;
+}
+
+/* DatePicker popup styling */
+.react-datepicker {
+  font-family: 'Inter', sans-serif;
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+/* Header dengan ORANGE gradient */
+.react-datepicker__header {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  border-bottom: none;
+  border-radius: 1rem 1rem 0 0;
+  padding-top: 1rem;
+}
+
+/* Month and day names in white */
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+  color: white;
+  font-weight: 600;
+}
+
+/* Navigation arrows */
+.react-datepicker__navigation {
+  top: 1rem;
+}
+
+.react-datepicker__navigation-icon::before {
+  border-color: white;
+}
+
+.react-datepicker__navigation:hover *::before {
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Selected day styling - ORANGE */
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: #f97316;
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: 600;
+}
+
+/* Hover effect on days - ORANGE MUDA */
+.react-datepicker__day:hover {
+  background-color: #fed7aa;
+  border-radius: 0.5rem;
+  color: #9a3412;
+}
+
+/* Today highlight - ORANGE */
+.react-datepicker__day--today {
+  font-weight: bold;
+  color: #f97316;
+}
+
+/* Disabled days */
+.react-datepicker__day--disabled {
+  color: #d1d5db;
+  cursor: not-allowed;
+}
+
+.react-datepicker__day--disabled:hover {
+  background-color: transparent;
+}
+
+/* Month container padding */
+.react-datepicker__month-container {
+  padding: 0.5rem;
+}
+
+/* Week spacing */
+.react-datepicker__week {
+  margin-bottom: 0.25rem;
+}
+
+/* Time picker (if you use it later) */
+.react-datepicker__time-container {
+  border-left: 1px solid #e5e7eb;
+}
+
+.react-datepicker__time-container .react-datepicker__time {
+  background: white;
+  border-radius: 0 0 1rem 0;
+}
+
+/* Popper z-index fix */
+.react-datepicker-popper {
+  z-index: 9999 !important;
+}
+
+/* Smooth animation */
+.react-datepicker {
+  animation: fadeInScale 0.2s ease-out;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }

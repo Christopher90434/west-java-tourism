@@ -23,7 +23,7 @@ const CulinaryDetail = () => {
           <h2 className="text-3xl font-bold text-gray-800 mb-4">Kuliner Tidak Ditemukan</h2>
           <button
             onClick={() => navigate('/culinary')}
-            className="bg-accent text-white px-6 py-3 rounded-lg"
+            className="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors"
           >
             Kembali ke Daftar Kuliner
           </button>
@@ -64,7 +64,7 @@ const CulinaryDetail = () => {
 
         <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
           <div className="container mx-auto">
-            <span className="bg-accent px-4 py-2 rounded-full text-sm font-semibold mb-4 inline-block">
+            <span className="bg-orange-500 px-4 py-2 rounded-full text-sm font-semibold mb-4 inline-block">
               {food.category}
             </span>
             <h1 className="text-5xl font-heading font-bold mb-4">
@@ -104,12 +104,12 @@ const CulinaryDetail = () => {
               </p>
             </div>
 
-            <div className="bg-accent/10 border-l-4 border-accent rounded-lg p-6">
-              <h3 className="text-xl font-bold text-accent mb-3 flex items-center gap-2">
+            <div className="bg-orange-50 border-l-4 border-orange-500 rounded-lg p-6">
+              <h3 className="text-xl font-bold text-orange-500 mb-3 flex items-center gap-2">
                 <FaUtensils /> Rekomendasi Tempat Terbaik
               </h3>
               <div className="flex items-start gap-3">
-                <FaMapMarkerAlt className="text-accent mt-1" />
+                <FaMapMarkerAlt className="text-orange-500 mt-1" />
                 <div>
                   <p className="font-bold text-lg">{food.bestPlace}</p>
                   <p className="text-gray-600">{food.location}</p>
@@ -122,7 +122,7 @@ const CulinaryDetail = () => {
             <div className="bg-white rounded-xl p-6 shadow-lg sticky top-24">
               <div className="mb-6">
                 <div className="text-gray-600 mb-2">Harga Rata-rata</div>
-                <div className="text-4xl font-bold text-accent">
+                <div className="text-4xl font-bold text-orange-500">
                   Rp {food.price.toLocaleString('id-ID')}
                 </div>
                 <div className="text-gray-500 text-sm">per porsi</div>
@@ -148,7 +148,7 @@ const CulinaryDetail = () => {
 
               <Link
                 to="/culinary"
-                className="block w-full border-2 border-accent text-accent text-center py-4 rounded-xl font-bold hover:bg-accent hover:text-white transition-colors"
+                className="block w-full border-2 border-orange-500 text-orange-500 text-center py-4 rounded-xl font-bold hover:bg-orange-500 hover:text-white transition-colors"
               >
                 Lihat Kuliner Lain
               </Link>

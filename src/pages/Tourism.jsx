@@ -14,7 +14,7 @@ const Tourism = () => {
   const [sortBy, setSortBy] = useState('popular');
   const [showFilters, setShowFilters] = useState(false);
   const [priceRange, setPriceRange] = useState([0, 200000]);
-  const [viewMode, setViewMode] = useState('grid'); // 'grid', 'list', 'map'
+  const [viewMode, setViewMode] = useState('grid');
   const [showModal, setShowModal] = useState(false);
   const [selectedDestination, setSelectedDestination] = useState(null);
   
@@ -55,8 +55,8 @@ const Tourism = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-primary to-secondary text-white py-20 mt-20">
+      {/* Header - ORANGE */}
+      <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white py-20 mt-20">
         <div className="container mx-auto px-4 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -84,7 +84,7 @@ const Tourism = () => {
           className="bg-white rounded-xl shadow-lg p-4 md:p-6 mb-8 sticky top-24 z-40"
         >
           <div className="flex flex-col md:flex-row gap-4">
-            {/* Search */}
+            {/* Search - ORANGE FOCUS */}
             <div className="flex-1 relative">
               <FaSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
               <input
@@ -92,15 +92,15 @@ const Tourism = () => {
                 placeholder="Cari destinasi atau lokasi..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
               />
             </div>
 
-            {/* Category Filter */}
+            {/* Category Filter - ORANGE FOCUS */}
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white"
+              className="px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 bg-white"
             >
               {categories.map((cat) => (
                 <option key={cat} value={cat}>
@@ -109,11 +109,11 @@ const Tourism = () => {
               ))}
             </select>
 
-            {/* Sort */}
+            {/* Sort - ORANGE FOCUS */}
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white"
+              className="px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 bg-white"
             >
               <option value="popular">Terpopuler</option>
               <option value="rating">Rating Tertinggi</option>
@@ -122,12 +122,12 @@ const Tourism = () => {
               <option value="name">Nama A-Z</option>
             </select>
 
-            {/* Filter Button */}
+            {/* Filter Button - ORANGE */}
             <button
               onClick={() => setShowFilters(!showFilters)}
               className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all ${
                 showFilters
-                  ? 'bg-primary text-white'
+                  ? 'bg-orange-500 text-white'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
@@ -136,82 +136,79 @@ const Tourism = () => {
             </button>
           </div>
 
-{/* Advanced Filters */}
-<AnimatePresence>
-  {showFilters && (
-    <motion.div
-      initial={{ height: 0, opacity: 0 }}
-      animate={{ height: 'auto', opacity: 1 }}
-      exit={{ height: 0, opacity: 0 }}
-      className="mt-6 pt-6 border-t border-gray-200 overflow-hidden"
-    >
-      <div className="grid md:grid-cols-2 gap-6">
-        <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-3">
-            Rentang Harga
-          </label>
-          <div className="space-y-4">
-            <div className="flex items-center justify-between text-lg font-bold text-primary">
-              <span>{formatCurrency(priceRange[0])}</span>
-              <span>-</span>
-              <span>{formatCurrency(priceRange[1])}</span>
-            </div>
-            
-            {/* Custom Range Slider */}
-            <div className="relative pt-2 pb-6">
-              <input
-                type="range"
-                min="0"
-                max="200000"
-                step="10000"
-                value={priceRange[1]}
-                onChange={(e) => setPriceRange([0, parseInt(e.target.value)])}
-                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary slider-thumb"
-                style={{
-                  background: `linear-gradient(to right, #2563eb 0%, #2563eb ${(priceRange[1]/200000)*100}%, #e5e7eb ${(priceRange[1]/200000)*100}%, #e5e7eb 100%)`
-                }}
-              />
-              
-              {/* Price markers */}
-              <div className="flex justify-between text-xs text-gray-500 mt-2">
-                <span>Rp 0</span>
-                <span>Rp 50K</span>
-                <span>Rp 100K</span>
-                <span>Rp 150K</span>
-                <span>Rp 200K</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div className="flex items-end gap-2">
-          <button
-            onClick={() => {
-              setPriceRange([0, 200000]);
-              setSelectedCategory('All');
-              setSearchQuery('');
-            }}
-            className="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors font-medium"
-          >
-            Reset Filter
-          </button>
-        </div>
-      </div>
-    </motion.div>
-  )}
-</AnimatePresence>
-
+          {/* Advanced Filters */}
+          <AnimatePresence>
+            {showFilters && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: 'auto', opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                className="mt-6 pt-6 border-t border-gray-200 overflow-hidden"
+              >
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-3">
+                      Rentang Harga
+                    </label>
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between text-lg font-bold text-orange-500">
+                        <span>{formatCurrency(priceRange[0])}</span>
+                        <span>-</span>
+                        <span>{formatCurrency(priceRange[1])}</span>
+                      </div>
+                      
+                      <div className="relative pt-2 pb-6">
+                        <input
+                          type="range"
+                          min="0"
+                          max="200000"
+                          step="10000"
+                          value={priceRange[1]}
+                          onChange={(e) => setPriceRange([0, parseInt(e.target.value)])}
+                          className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider-thumb"
+                          style={{
+                            background: `linear-gradient(to right, #f97316 0%, #f97316 ${(priceRange[1]/200000)*100}%, #e5e7eb ${(priceRange[1]/200000)*100}%, #e5e7eb 100%)`
+                          }}
+                        />
+                        
+                        <div className="flex justify-between text-xs text-gray-500 mt-2">
+                          <span>Rp 0</span>
+                          <span>Rp 50K</span>
+                          <span>Rp 100K</span>
+                          <span>Rp 150K</span>
+                          <span>Rp 200K</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-end gap-2">
+                    <button
+                      onClick={() => {
+                        setPriceRange([0, 200000]);
+                        setSelectedCategory('All');
+                        setSearchQuery('');
+                      }}
+                      className="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors font-medium"
+                    >
+                      Reset Filter
+                    </button>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </motion.div>
 
         {/* View Mode Switcher & Results Count */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
           <div>
             <p className="text-gray-600">
-              Menampilkan <span className="font-bold text-primary">{filteredData.length}</span> dari{' '}
+              Menampilkan <span className="font-bold text-orange-500">{filteredData.length}</span> dari{' '}
               <span className="font-bold">{tourismData.length}</span> destinasi
               {selectedCategory !== 'All' && (
                 <span>
-                  {' '}dalam kategori <span className="font-bold text-primary">{selectedCategory}</span>
+                  {' '}dalam kategori <span className="font-bold text-orange-500">{selectedCategory}</span>
                 </span>
               )}
             </p>
@@ -222,7 +219,7 @@ const Tourism = () => {
               onClick={() => setViewMode('grid')}
               className={`p-2 rounded-lg transition-all ${
                 viewMode === 'grid'
-                  ? 'bg-primary text-white'
+                  ? 'bg-orange-500 text-white'
                   : 'text-gray-600 hover:bg-gray-100'
               }`}
               title="Grid View"
@@ -233,7 +230,7 @@ const Tourism = () => {
               onClick={() => setViewMode('list')}
               className={`p-2 rounded-lg transition-all ${
                 viewMode === 'list'
-                  ? 'bg-primary text-white'
+                  ? 'bg-orange-500 text-white'
                   : 'text-gray-600 hover:bg-gray-100'
               }`}
               title="List View"
@@ -244,7 +241,7 @@ const Tourism = () => {
               onClick={() => setViewMode('map')}
               className={`p-2 rounded-lg transition-all ${
                 viewMode === 'map'
-                  ? 'bg-primary text-white'
+                  ? 'bg-orange-500 text-white'
                   : 'text-gray-600 hover:bg-gray-100'
               }`}
               title="Map View"
@@ -294,7 +291,6 @@ const Tourism = () => {
                       {viewMode === 'grid' ? (
                         <TourismCard destination={destination} />
                       ) : (
-                        // List View Card
                         <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col md:flex-row">
                           <div className="md:w-80 h-64 md:h-auto relative overflow-hidden">
                             <img
@@ -303,7 +299,7 @@ const Tourism = () => {
                               className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                             />
                             <div className="absolute top-4 left-4">
-                              <span className="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+                              <span className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium">
                                 {destination.category}
                               </span>
                             </div>
@@ -313,7 +309,7 @@ const Tourism = () => {
                               {destination.name}
                             </h3>
                             <div className="flex items-center text-gray-600 mb-3">
-                              <FaMapMarkerAlt className="mr-2 text-primary" />
+                              <FaMapMarkerAlt className="mr-2 text-orange-500" />
                               <span>{destination.location}</span>
                             </div>
                             <p className="text-gray-600 mb-4 line-clamp-2">
@@ -321,7 +317,7 @@ const Tourism = () => {
                             </p>
                             <div className="flex items-center justify-between">
                               <div>
-                                <span className="text-2xl font-bold text-primary">
+                                <span className="text-2xl font-bold text-orange-500">
                                   {formatCurrency(destination.price)}
                                 </span>
                                 <span className="text-gray-500 text-sm ml-2">per orang</span>
@@ -335,7 +331,7 @@ const Tourism = () => {
                                 </button>
                                 <button
                                   onClick={() => window.location.href = `/tourism/${destination.id}`}
-                                  className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-secondary transition-colors"
+                                  className="px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors"
                                 >
                                   Lihat Detail
                                 </button>
@@ -367,7 +363,7 @@ const Tourism = () => {
                     setSelectedCategory('All');
                     setPriceRange([0, 200000]);
                   }}
-                  className="px-6 py-3 bg-primary text-white rounded-lg hover:bg-secondary transition-colors"
+                  className="px-6 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors"
                 >
                   Reset Pencarian
                 </button>
@@ -393,10 +389,10 @@ const Tourism = () => {
             />
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center text-gray-600">
-                <FaMapMarkerAlt className="mr-2 text-primary" />
+                <FaMapMarkerAlt className="mr-2 text-orange-500" />
                 <span>{selectedDestination.location}</span>
               </div>
-              <span className="text-2xl font-bold text-primary">
+              <span className="text-2xl font-bold text-orange-500">
                 {formatCurrency(selectedDestination.price)}
               </span>
             </div>
@@ -416,7 +412,7 @@ const Tourism = () => {
             </div>
             <button
               onClick={() => (window.location.href = `/tourism/${selectedDestination.id}`)}
-              className="w-full bg-primary text-white py-3 rounded-lg font-bold hover:bg-secondary transition-colors"
+              className="w-full bg-orange-500 text-white py-3 rounded-lg font-bold hover:bg-orange-600 transition-colors"
             >
               Lihat Detail Lengkap
             </button>

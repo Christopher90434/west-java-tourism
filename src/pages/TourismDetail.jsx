@@ -23,7 +23,7 @@ const TourismDetail = () => {
           <h2 className="text-3xl font-bold text-gray-800 mb-4">Destinasi Tidak Ditemukan</h2>
           <button
             onClick={() => navigate('/tourism')}
-            className="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-secondary transition-colors"
+            className="bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors"
           >
             Kembali ke Daftar Wisata
           </button>
@@ -34,7 +34,6 @@ const TourismDetail = () => {
 
   const isFavorite = favorites.includes(destination.id);
 
-  // Handle Contact Button Click
   const handleContactClick = () => {
     navigate('/contact');
   };
@@ -50,7 +49,6 @@ const TourismDetail = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
         
-        {/* Back Button */}
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -60,7 +58,6 @@ const TourismDetail = () => {
           <FaArrowLeft /> Kembali
         </motion.button>
 
-        {/* Favorite Button */}
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
@@ -70,10 +67,9 @@ const TourismDetail = () => {
           <FaHeart className={isFavorite ? 'text-red-500' : 'text-gray-400'} size={24} />
         </motion.button>
 
-        {/* Title Overlay */}
         <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
           <div className="container mx-auto">
-            <span className="bg-primary px-4 py-2 rounded-full text-sm font-semibold mb-4 inline-block">
+            <span className="bg-orange-500 px-4 py-2 rounded-full text-sm font-semibold mb-4 inline-block">
               {destination.category}
             </span>
             <h1 className="text-5xl font-heading font-bold mb-4">
@@ -96,9 +92,7 @@ const TourismDetail = () => {
       {/* Content */}
       <div className="container mx-auto px-4 py-12">
         <div className="grid lg:grid-cols-3 gap-8">
-          {/* Main Content */}
           <div className="lg:col-span-2">
-            {/* Description */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -115,7 +109,6 @@ const TourismDetail = () => {
               </p>
             </motion.div>
 
-            {/* Facilities */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -125,7 +118,7 @@ const TourismDetail = () => {
               <h2 className="text-3xl font-bold mb-6 text-gray-800">Fasilitas</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {destination.facilities && destination.facilities.map((facility, index) => (
-                  <div key={index} className="flex items-center gap-3 bg-gray-50 p-4 rounded-lg hover:bg-blue-50 transition-colors">
+                  <div key={index} className="flex items-center gap-3 bg-gray-50 p-4 rounded-lg hover:bg-orange-50 transition-colors">
                     <FaCheckCircle className="text-green-500 flex-shrink-0" size={20} />
                     <span className="text-gray-800 font-medium">{facility}</span>
                   </div>
@@ -133,21 +126,18 @@ const TourismDetail = () => {
               </div>
             </motion.div>
 
-            {/* Tips */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="bg-blue-50 border-l-4 border-primary rounded-lg p-6"
+              className="bg-orange-50 border-l-4 border-orange-500 rounded-lg p-6"
             >
-              <h3 className="text-xl font-bold text-primary mb-3">💡 Tips Berkunjung</h3>
+              <h3 className="text-xl font-bold text-orange-500 mb-3">💡 Tips Berkunjung</h3>
               <p className="text-gray-700 leading-relaxed">{destination.tips}</p>
             </motion.div>
           </div>
 
-          {/* Sidebar */}
           <div className="lg:col-span-1">
-            {/* Booking Card */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -155,7 +145,7 @@ const TourismDetail = () => {
             >
               <div className="mb-6">
                 <div className="text-gray-600 mb-2 text-sm font-medium">Harga Tiket Masuk</div>
-                <div className="text-4xl font-bold text-primary">
+                <div className="text-4xl font-bold text-orange-500">
                   Rp {destination.price.toLocaleString('id-ID')}
                 </div>
                 <div className="text-gray-500 text-sm">per orang</div>
@@ -163,7 +153,7 @@ const TourismDetail = () => {
 
               <div className="space-y-4 mb-6 bg-gray-50 p-4 rounded-lg">
                 <div className="flex items-start gap-3">
-                  <FaClock className="text-primary mt-1 flex-shrink-0" size={20} />
+                  <FaClock className="text-orange-500 mt-1 flex-shrink-0" size={20} />
                   <div>
                     <div className="font-semibold text-gray-800">Jam Operasional</div>
                     <div className="text-gray-600 text-sm">{destination.openTime}</div>
@@ -171,7 +161,7 @@ const TourismDetail = () => {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <FaMapMarkerAlt className="text-primary mt-1 flex-shrink-0" size={20} />
+                  <FaMapMarkerAlt className="text-orange-500 mt-1 flex-shrink-0" size={20} />
                   <div>
                     <div className="font-semibold text-gray-800">Lokasi</div>
                     <div className="text-gray-600 text-sm">{destination.location}</div>
@@ -179,12 +169,11 @@ const TourismDetail = () => {
                 </div>
               </div>
 
-              {/* HUBUNGI KAMI BUTTON - FIXED */}
               <motion.button
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={handleContactClick}
-                className="w-full bg-primary text-white py-4 rounded-xl font-bold text-lg hover:bg-secondary transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-2xl"
+                className="w-full bg-orange-500 text-white py-4 rounded-xl font-bold text-lg hover:bg-orange-600 transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-2xl"
               >
                 <FaPhone size={20} />
                 Hubungi Kami
@@ -192,7 +181,7 @@ const TourismDetail = () => {
 
               <Link
                 to="/tourism"
-                className="block w-full border-2 border-primary text-primary text-center py-4 rounded-xl font-bold hover:bg-primary hover:text-white transition-all duration-300"
+                className="block w-full border-2 border-orange-500 text-orange-500 text-center py-4 rounded-xl font-bold hover:bg-orange-500 hover:text-white transition-all duration-300"
               >
                 Lihat Destinasi Lain
               </Link>
@@ -235,7 +224,7 @@ const TourismDetail = () => {
                         <h3 className="font-bold text-lg mb-2 text-gray-800">{item.name}</h3>
                         <p className="text-gray-600 text-sm mb-3 line-clamp-2">{item.description}</p>
                         <div className="flex justify-between items-center">
-                          <span className="text-primary font-bold">
+                          <span className="text-orange-500 font-bold">
                             Rp {item.price.toLocaleString('id-ID')}
                           </span>
                           <div className="flex items-center gap-1">
